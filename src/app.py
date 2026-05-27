@@ -5,12 +5,11 @@ from sklearn.linear_model import LinearRegression
 import streamlit as st
 from pathlib import Path
 
-
-BASE_DIR = Path(__file__).resolve().parent
-DATA_DIR = BASE_DIR.parent / "data"
-groups = pd.read_csv(DATA_DIR / "groups.csv")
-lessons = pd.read_csv(DATA_DIR / "lessons.csv")
-attendances = pd.read_csv(DATA_DIR / "attendances.csv")
+root_dir = Path(__file__).resolve().parent.parent
+data_dir = root_dir / "Data" if (root_dir / "Data").exists() else root_dir / "data"
+groups = pd.read_csv(data_dir / "groups.csv")
+lessons = pd.read_csv(data_dir / "lessons.csv")
+attendances = pd.read_csv(data_dir / "attendances.csv")
 
 st.set_page_config(
     page_title="Прогноз для онлайн-школы", page_icon="📈", layout="wide"
