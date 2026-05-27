@@ -3,6 +3,14 @@ import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 import streamlit as st
+from pathlib import Path
+
+
+BASE_DIR = Path(__file__).resolve().parent
+DATA_DIR = BASE_DIR.parent / "data"
+groups = pd.read_csv(DATA_DIR / "groups.csv")
+lessons = pd.read_csv(DATA_DIR / "lessons.csv")
+attendances = pd.read_csv(DATA_DIR / "attendances.csv")
 
 st.set_page_config(
     page_title="Прогноз для онлайн-школы", page_icon="📈", layout="wide"
