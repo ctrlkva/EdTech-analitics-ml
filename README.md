@@ -1,4 +1,4 @@
-# EdTech Attendance Analytics & Forecasting Dashboard 📈
+# EdTech Attendance Analytics & Forecasting Dashboard
 
 [![Streamlit App](https://streamlit.io)](https://ctrlkva.streamlit.app/)
 
