@@ -33,7 +33,7 @@ The model achieves an **R² Score of 0.13** after strict data cleaning. While th
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/ctrlkva/YesOnlineStatistics
+   git clone https://github.com/ctrlkva/EdTech-analitics-ml
    cd YesOnlineStatistics
    ```
 
