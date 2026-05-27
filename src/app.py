@@ -5,30 +5,42 @@ from sklearn.linear_model import LinearRegression
 import streamlit as st
 from pathlib import Path
 
-root_dir = Path(__file__).resolve().parent.parent
-data_dir = root_dir / "Data" if (root_dir / "Data").exists() else root_dir / "data"
-groups = pd.read_csv(data_dir / "groups.csv")
-lessons = pd.read_csv(data_dir / "lessons.csv")
-attendances = pd.read_csv(data_dir / "attendances.csv")
-
 st.set_page_config(
     page_title="Прогноз для онлайн-школы", page_icon="📈", layout="wide"
 )
 
-st.title("🔮 Прогнозирование посещаемости: ")
+st.title("🔮 Прогнозирование посещаемости:")
 st.markdown("---")
 
 
 @st.cache_data
 def load_and_process_data():
-    groups = pd.read_csv("../data/groups.csv")
-    lessons = pd.read_csv("../data/lessons.csv")
-    attendances = pd.read_csv("../data/attendances.csv")
+    root_dir = Path(__file__).resolve().parent.parent
+    
+    data_dir = None
+    for folder in root_dir.iterdir():
+        if folder.is_dir() and folder.name.lower() == "data":
+            data_dir = folder
+            break
 
-    # Data pipeline: merge relational data structures
+    if data_dir is None or not data_dir.exists():
+        st.error(f"Критическая ошибка: Папка 'data' не найдена в корне {root_dir}")
+        st.stop()
+
+    files = {f.name.lower(): f for f in data_dir.iterdir() if f.is_file()}
+
+    try:
+        groups = pd.read_csv(files["groups.csv"])
+        lessons = pd.read_csv(files["lessons.csv"])
+        attendances = pd.read_csv(files["attendances.csv"])
+    except KeyError as e:
+        st.error(f"В папке данных не найден файл: {e}. Доступные файлы: {list(files.keys())}")
+        st.stop()
+
     bd_online = lessons.merge(
         attendances, left_on="_id", right_on="lessonId", how="inner"
     )
+
     bd_online = bd_online.merge(
         groups, left_on="groupId", right_on="_id", how="inner"
     )
@@ -192,7 +204,6 @@ else:
             marker="s",
         )
 
-        # --- NEW: Plot Mean and Median Lines ---
         ax.axhline(
             y=mean_val,
             color="red",
