@@ -5,10 +5,10 @@ from sklearn.linear_model import LinearRegression
 import streamlit as st
 
 st.set_page_config(
-    page_title="Прогноз Yes Online", page_icon="📈", layout="wide"
+    page_title="Прогноз для онлайн-школы", page_icon="📈", layout="wide"
 )
 
-st.title("🔮 Прогнозирование посещаемости: Yes Online")
+st.title("🔮 Прогнозирование посещаемости: ")
 st.markdown("---")
 
 
