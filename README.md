@@ -1,6 +1,6 @@
 # EdTech Attendance Analytics & Forecasting Dashboard 
 
-## 📈 [![Streamlit App]](https://ctrlkva.streamlit.app/)
+## 📈 [Streamlit App](https://ctrlkva.streamlit.app/)
 
 A production-ready data science project featuring an interactive web dashboard for educational center attendance analysis and time-series forecasting.
 
