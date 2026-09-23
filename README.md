@@ -6,7 +6,7 @@
 
 ## 📈 Live Dashboard Demo
 * 📊 **[Open Yandex DataLens Public Dashboard](https://datalens.yandex/vxb6u0h99na8e?_share_link=public)** *(Interactive cloud web access)*
-<img width="1948" height="981" alt="image" src="[https://github.com/user-attachments/assets/545b1399-9435-43a8-889e-f1fbf8a9e6d4](https://github.com/ctrlkva/EdTech-analitics-ml/blob/8085b2371ace7d4bc8d7ad1f8e9bca6f03ea9bf1/screenshots/datalens.png)" />
+<img width="1948" height="981" alt="image" src="https://github.com/user-attachments/assets/1c89bf56-f110-4413-b57d-0e18f7c074f4" />
 
 ---
 
@@ -16,6 +16,8 @@ This project transforms raw database exports of an educational center into a str
 1. **🗄️ Data Engineering (In-DB ETL):** Relational schema merging (`lessons`, `attendances`, `groups`) on the MongoDB database level using aggregation views and strict filtering of the target online platform branch.
 2. **📈 Time-Series Pipeline:** An automated data cleaning script that truncates incomplete boundary reporting periods, removes localized drops via a rolling average (1.5 standard deviations threshold filter), and applies a median fallback algorithm.
 3. **🤖 Predictive Modeling:** A time-series model built with `scikit-learn` (LinearRegression) that captures global growth trends and calendar seasonality components to forecast student attendance 6 months into the future.
+<img width="1750" height="998" alt="powerbi" src="https://github.com/user-attachments/assets/a4499a90-ec3f-413d-884a-838f26451aff" />
+
 
 ---
 
