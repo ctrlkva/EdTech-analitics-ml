@@ -3,6 +3,7 @@
 ## 📈 [Streamlit App](https://ctrlkva.streamlit.app/)
 
 A production-ready data science project featuring an interactive web dashboard for educational center attendance analysis and time-series forecasting.
+<img width="2549" height="1167" alt="image" src="https://github.com/user-attachments/assets/94bc8cfd-975d-41f9-a924-6cb6c7a8321b" />
 
 ## 🎯 Project Overview
 This project transforms raw database exports of students' attendances into a strategic analytical tool. It solves two critical tasks:
