@@ -49,7 +49,7 @@
 Клонируйте репозиторий в локальную папку и установите необходимые библиотеки Python (убедитесь, что на вашем компьютере установлен Python и запущен локальный сервер MongoDB Community Server):
 
 ```bash
-git clone https://github.com
+git clone https://github.com/EdTech-analitics-ml
 cd EdTech-analitics-ml
 pip install -r requirements.txt
 ```
