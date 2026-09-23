@@ -37,7 +37,7 @@ This project transforms raw database exports of an educational center into a str
 ├── 📂 reports/                 # Business intelligence reporting layer
 │   └── 📊 dashboard.pbix       # Production Power BI dashboard file
 ├── 📂 screenshots/             # Interface visualizations for repository documentation
-│   ├── 🖼️ 1.png                # Power BI main dashboard overview screenshot
+│   ├── 🖼️ powerbi.png                # Power BI main dashboard overview screenshot
 │   └── 🖼️ datalens.png         # Yandex DataLens dashboard overview screenshot
 ├── 📂 scripts/                 # Automation scripts for database initialization and ML
 │   ├── 📜 create_view.js       # Database schema view deployment script for Mongosh
