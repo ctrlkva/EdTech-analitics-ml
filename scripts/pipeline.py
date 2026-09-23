@@ -16,7 +16,7 @@ def run_pipeline():
             print("Представление 'bd_online_aggregated' не найдено. Пожалуйста, запустите сначала скрипт создания View.")
             return
         
-        data = list(db["bd_online_aggregated"].find())
+        data = list(db["bd_online_aggregated"].find({}))
         df_raw = pd.DataFrame(data)
         print(f"Успешно загружено {len(df_raw)} записей из MongoDB.")
     except Exception as e:
@@ -61,7 +61,7 @@ def run_pipeline():
     monthly_counts = monthly_counts[monthly_counts["count"] >= (median_visits * 0.2)].reset_index(drop=True)
     print(f"Очистка завершена. Доступно {len(monthly_counts)} месяцев чистой истории.")
 
-    # 4. Обучение Линейной Регрессии и Предсказание на полгода вперед
+    # Обучение Линейной Регрессии и Предсказание на полгода вперед
     monthly_counts["month_index"] = np.arange(len(monthly_counts))
     monthly_counts["calendar_month"] = monthly_counts["parsed_date"].dt.month
 
@@ -105,12 +105,14 @@ def run_pipeline():
     output_dataset = pd.concat([monthly_counts, df_future], ignore_index=True)
     output_dataset["parsed_date"] = output_dataset["parsed_date"].astype(str)
 
-    # 5. Экспорт результатов для контроля
+    # Экспорт результатов для контроля
     output_dir = os.path.join(os.path.dirname(__file__), "..", "data")
     os.makedirs(output_dir, exist_ok=True)
     output_path = os.path.join(output_dir, "predictions_output.csv")
-    output_dataset.to_csv(output_path, index=False)
+    output_dataset.to_csv(output_path, sep=",", index=False, encoding="utf-8-sig")
+
     print(f"Результаты трансформации и предсказания сохранены в: data/predictions_output.csv")
+
 
 if __name__ == "__main__":
     run_pipeline()
