@@ -6,6 +6,7 @@
 
 ## 📈 Live Dashboard Demo
 * 📊 **[Open Yandex DataLens Public Dashboard](https://datalens.yandex/vxb6u0h99na8e?_share_link=public)** *(Interactive cloud web access)*
+<img width="1948" height="981" alt="image" src="[https://github.com/user-attachments/assets/545b1399-9435-43a8-889e-f1fbf8a9e6d4](https://github.com/ctrlkva/EdTech-analitics-ml/blob/8085b2371ace7d4bc8d7ad1f8e9bca6f03ea9bf1/screenshots/datalens.png)" />
 
 ---
 
