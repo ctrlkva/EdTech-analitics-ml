@@ -49,7 +49,7 @@ This project transforms raw database exports of an educational center into a str
 Clone this repository to your local directory and install the necessary Python packages (ensure that Python and a local instance of MongoDB Community Server are running on your machine):
 
 ```bash
-git clone https://github.com
+git clone https://github.com/EdTech-analitics-ml
 cd EdTech-analitics-ml
 pip install -r requirements.txt
 ```
