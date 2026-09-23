@@ -1,2 +1,17 @@
-# Ignore all CSV files anywhere in the project
-#*.csv
+# === Python temporary files ===
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.pytest_cache/
+
+# === Power BI & Data tools ===
+*.pbi
+*.user.pbix
+*.backup.pbix
+
+# === OS & System garbage ===
+.DS_Store
+Thumbs.db

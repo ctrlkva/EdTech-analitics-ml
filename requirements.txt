@@ -1,5 +1,4 @@
+pymongo
 pandas
-matplotlib
 numpy
 scikit-learn
-streamlit
