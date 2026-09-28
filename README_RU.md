@@ -6,7 +6,7 @@
 
 ## 📈 Альтернативные BI-решения (Live Deployments)
 Ознакомьтесь с альтернативными реализациями дашборда корпоративного уровня, доступными в [ветке powerbi](https://github.com/ctrlkva/EdTech-analitics-ml/tree/powerbi):
-* 🌐 **[Интерактивный облачный дашборд в Yandex DataLens](https://datalens.ru/vxb6u0h99na8e-edtech-analytics-dashboard?_share_link=org)**
+* 🌐 **Интерактивный облачный дашборд в [Yandex DataLens](https://datalens.ru/vxb6u0h99na8e-edtech-analytics-dashboard?_share_link=org)**
 * 📊 **Аналитический отчет Power BI Desktop** *(Реализация в формате `.pbix` с DAX-метриками)*
 
 ---
@@ -18,7 +18,7 @@
 2. **📈 Time-Series Pipeline:** Автоматизированный скрипт очистки данных, который отсекает неполные граничные периоды, устраняет локальные просадки с помощью скользящего среднего (пороговый фильтр 1.5 стандартных отклонений) и применяет медианный fallback-алгоритм.
 3. **🤖 Predictive Modeling:** Модель временных рядов на базе линейной регрессии (`scikit-learn`), которая учитывает глобальный тренд развития школы и компоненты календарной сезонности, выстраивая непрерывный прогноз на 6 месяцев вперед.
 
-<img width="2549" height="1167" alt="image" src="https://github.com" />
+<img width="2549" height="1167" alt="image" src="https://github.com/user-attachments/assets/94bc8cfd-975d-41f9-a924-6cb6c7a8321b" />
 
 ---
 
@@ -52,7 +52,7 @@
 * **Формирование сводного Benchmark** — сведение метрик (R², MAE, RMSE) линейной регрессии, SARIMAX и Prophet в единую аналитическую таблицу для выбора финального production-решения.
 * **Обновление выгрузки** — адаптация скрипта экспорта итогового файла `predictions_output.csv` под обновленную структуру данных для дашбордов в Power BI / Yandex DataLens.
 
-<img width="987" height="968" alt="image" src="https://github.com" />
+<img width="987" height="968" alt="image" src="https://github.com/user-attachments/assets/3ce4fe53-134f-4735-82d1-61342e599f99" />
 
 ---
 
