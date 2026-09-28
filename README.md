@@ -18,6 +18,38 @@ This project transforms raw database exports of an educational center into a str
 3. **🤖 Predictive Modeling:** A time-series model built with `scikit-learn` (LinearRegression) that captures global growth trends and calendar seasonality components to forecast student attendance 6 months into the future.
 <img width="1750" height="998" alt="powerbi" src="https://github.com/user-attachments/assets/a4499a90-ec3f-413d-884a-838f26451aff" />
 
+---
+
+## 📊 Baseline Model Analysis & Technical Backlog
+
+### 1. Key Insights from EDA & Current Performance
+As part of the Exploratory Data Analysis (EDA), attendance patterns on the EdTech platform were thoroughly investigated, revealing two critical cyclic user behavior components:
+* **Micro-Seasonality:** Pronounced weekly traffic fluctuations with clear attendance drops on weekends and peak activity during mid-week.
+* **Macro-Seasonality:** Long-term academic year cycles, driven by calendar-specific drop periods (summer holidays, January and May public holidays) and autumn/spring peaks in educational activity.
+
+The initial baseline model developed using Linear Regression achieved an **R² score of 0.11 across a 6-month forecasting horizon**.
+* **Root Cause of Low Metrics:** Standard temporal features (one-hot encoding of days of the week and months) fail to capture the autoregressive nature of the time series, non-linear long-term trends, and abrupt calendar anomalies unique to the EdTech sector.
+* **Role of the Current Model:** The model successfully functions as a starting baseline and architectural blueprint for the end-to-end ML pipeline—spanning data extraction from MongoDB to the final prediction export.
+
+### 🎯 Technical Backlog for Moving to Sequential Architectures
+
+To enhance forecasting accuracy, a step-by-step migration plan has been established to transition toward specialized time-series algorithms (Prophet / ARIMA):
+
+#### 🛠 Sprint 1: Statistical Autoregressive Integration (SARIMAX)
+* **Stationarity & Autocorrelation Testing** — Execute an Augmented Dickey-Fuller (ADF) test and plot ACF / PACF charts to mathematically determine optimal autoregressive lags (p, q).
+* **SARIMAX Model Implementation** — Deploy the algorithm with an explicit weekly seasonal period (s=7) to stabilize micro-seasonality tracking.
+* **Exogenous Macro-Factors Evaluation** — Incorporate external exogenous variables (session flags, holiday periods) to smooth out the forecast line.
+
+#### 🚀 Sprint 2: Migration to Facebook Prophet (Event & Calendar Management)
+* **Data Adapter Development** — Build a data transformation layer to reshape aggregated data from MongoDB into Prophet’s required target schema (`ds`, `y`).
+* **Holiday & Slump Modeling** — Integrate a custom calendar featuring Russian public holidays and sector-specific EdTech events (summer breaks) to eliminate artificial trend drops.
+* **Hyperparameter Tuning & Decomposition** — Fine-tune change-points sensitivity (`changepoints`) and visualize extracted trend components using `model.plot_components()`.
+
+#### 📈 Sprint 3: Cross-Validation & Benchmarking
+* **Rolling-Window Validation** — Implement a `TimeSeriesSplit` cross-validation scheme (or Prophet's native diagnostic tools) to accurately evaluate quality over a 6-month horizon without data leakage.
+* **Comprehensive Benchmark Report** — Aggregate metrics (R², MAE, RMSE) from the Linear Regression baseline, SARIMAX, and Prophet into a unified analysis matrix to select the final production-ready solution.
+* **Export Pipeline Update** — Adapt the export script to align the final `predictions_output.csv` file structure with the reporting requirements of Power BI / Yandex DataLens dashboards.
+<img width="987" height="968" alt="image" src="https://github.com/user-attachments/assets/3ce4fe53-134f-4735-82d1-61342e599f99" />
 
 ---
 
