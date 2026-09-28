@@ -1,5 +1,5 @@
 # 🔮 EdTech Attendance Analytics & Forecasting Dashboard
-## 📈 Live Dashboard Demo [Streamlit App](https://ctrlkva.streamlit.app/)
+## 📈 Live Dashboard Demo: [Streamlit App](https://ctrlkva.streamlit.app/)
 An interactive Data Science platform featuring a **Streamlit** dashboard for educational center analytics, complete with an automated data cleaning pipeline and a 6-month attendance forecast model.
 
 ---
@@ -46,6 +46,7 @@ To enhance forecasting accuracy, a step-by-step migration plan has been establis
 * **Rolling-Window Validation** — Implement a `TimeSeriesSplit` cross-validation scheme (or Prophet's native diagnostic tools) to accurately evaluate quality over a 6-month horizon without data leakage.
 * **Comprehensive Benchmark Report** — Aggregate metrics (R², MAE, RMSE) from the Linear Regression baseline, SARIMAX, and Prophet into a unified analysis matrix to select the final production-ready solution.
 * **Export Pipeline Update** — Adapt the export script to align the final `predictions_output.csv` file structure with the reporting requirements of Power BI / Yandex DataLens dashboards.
+* 
 <img width="987" height="968" alt="image" src="https://github.com/user-attachments/assets/3ce4fe53-134f-4735-82d1-61342e599f99" />
 
 ---
