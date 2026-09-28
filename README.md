@@ -5,7 +5,7 @@ An interactive Data Science platform featuring a **Streamlit** dashboard for edu
 ---
 
 ## 📈 Alternative BI Live Deployments
-Explore alternative enterprise BI implementations available in the [powerbi branch](https://github.com/ctrlkva/EdTech-analitics-ml/blob/powerbi):
+Explore alternative enterprise BI implementations available in the [powerbi branch](https://github.com/ctrlkva/EdTech-analitics-ml/tree/powerbi):
 * 🌐 **[Live Yandex DataLens Public Dashboard](https://datalens.ru/vxb6u0h99na8e-edtech-analytics-dashboard?_share_link=org)**
 * 📊 **Power BI Desktop Report** *(Native `.pbix` implementation)*
 
