@@ -167,7 +167,8 @@ else:
         target_past_period = fp - 12
         past_row = df[df["parsed_date"] == target_past_period]
         if not past_row.empty:
-            future_lags.append(past_row["count"].values)
+            # .values[0] гарантирует, что мы берем конкретное число (скаляр), а не объект массива
+            future_lags.append(past_row["count"].values[0])
         else:
             future_lags.append(df["count"].median())  # Фолбэк при отсутствии исторических записей
 
