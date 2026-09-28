@@ -55,8 +55,8 @@
 #### 📈 Спринт 3: Валидация и Бенчмаркинг
 *   **Кросс-валидация временных рядов:** Настройка схемы `TimeSeriesSplit` для жесткого тестирования моделей без заглядывания в будущее.
 *   **Сводный отчет качества:** Сведение метрик (R², MAE, RMSE) линейной регрессии и CatBoost в единую таблицу для финального деплоя в Power BI / Yandex DataLens.
-
-<img width="987" height="968" alt="image" src="https://github.com/user-attachments/assets/3ce4fe53-134f-4735-82d1-61342e599f99" />
+  
+<img width="1069" height="841" alt="image" src="https://github.com/user-attachments/assets/7408c4e7-b1fe-4f9a-968b-0fd228a2b019" />
 
 ---
 
